@@ -1,52 +1,96 @@
-# 🗑️ Smart IoT Trash Bin with GPS and Cloud Monitoring
+= 🗑️ Smart IoT Trash Bin with GPS and Cloud Monitoring
+:icons: font
+:toc:
+:toclevels: 2
+:sectnums:
 
-A smart trash bin powered by an **ESP32 microcontroller**, equipped with **ultrasonic sensors**, a **servo motor**, **OLED display**, and a **GPS module**. It sends live trash level, location, and lid status to the **Arduino IoT Cloud**, enabling **remote monitoring and control**.
+A smart trash bin powered by an *ESP32 microcontroller*, equipped with *ultrasonic sensors*, a *servo motor*, *OLED display*, and a *GPS module*.  
+It sends live trash level, location, and lid status to the *Arduino IoT Cloud*, enabling *real-time remote monitoring and control*.
 
 == 📸 Project Overview
 
-=== Figure 1 – Physical Setup  
+=== Figure 1 – Physical Setup
 image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/PhysicalSetup.jpg[Smart Trash Bin Physical Setup, width=400]
 
-=== Figure 2 – Design Inspiration (WALL·E)  
+=== Figure 2 – Design Inspiration (WALL·E)
 image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/wall-e.jpg[WALL·E Inspired Look, width=250]
 
-=== Figure 3 – Arduino IoT Cloud Dashboard  
+=== Figure 3 – Arduino IoT Cloud Dashboard
 image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoCloudDashboard.png[Cloud Dashboard, width=400]
 
-=== Figure 4 – Mobile Dashboard View  
+=== Figure 4 – Mobile Dashboard View
 image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoDashBoardMobile.jpg[Mobile Dashboard, width=250]
 
+== 💡 Features
 
----
+* ✋ *Smart Lid Opening* using ultrasonic hand detection
+* 📊 *Real-time Trash Fullness Monitoring* with sensor averaging
+* 🌍 *Live GPS Tracking* of the bin’s location
+* 📶 *Arduino IoT Cloud Integration* for live data & control
+* 📱 *Manual Lid Control* via cloud dashboard
+* 🔔 *Notification Alerts* when bin is 70% full
+* 📈 *Fullness Average Graph* for trend analysis
 
-## 💡 Features
+== 🔧 Hardware Setup
 
-- ✋ **Smart Lid Opening** using ultrasonic hand detection  
-- 📊 **Real-time Trash Fullness Monitoring** with sensor averaging  
-- 🌍 **Live GPS Tracking** of the bin’s location  
-- 📶 **Arduino IoT Cloud Integration** for real-time data and control  
-- 📱 **Manual Lid Control** via cloud dashboard  
-- 🔔 **Notification System** when bin is 70% full  
-- 📈 **Fullness Average Graph** for trend analysis
+[cols="1,2,1", options="header"]
+|===
+| Component
+| Description
+| Connection Pins
 
----
+| ESP32 Dev Board
+| Main microcontroller
+| Wi-Fi, Serial, GPIOs
 
-## 🔧 Hardware Setup
+| Ultrasonic Sensor 1
+| Hand detection near lid
+| TRIG1: 5, ECHO1: 18
 
-| Component            | Description                         | Connection Pins         |
-|----------------------|-------------------------------------|--------------------------|
-| ESP32 Dev Board      | Main microcontroller                | Wi-Fi, Serial, GPIOs     |
-| Ultrasonic Sensor 1  | Hand detection near lid             | TRIG1: 5, ECHO1: 18      |
-| Ultrasonic Sensor 2  | Trash level measurement             | TRIG2: 2, ECHO2: 4       |
-| Servo Motor          | Opens/closes lid                    | PIN: 14                  |
-| OLED Display (I2C)   | Shows fullness %                    | SDA: 21, SCL: 22         |
-| GPS Module           | Provides latitude/longitude         | RX: 32, TX: 33 (Serial1) |
+| Ultrasonic Sensor 2
+| Trash level measurement
+| TRIG2: 2, ECHO2: 4
 
----
+| Servo Motor
+| Opens/closes lid
+| PIN: 14
 
-## ⚙️ How to Use
+| OLED Display (I2C)
+| Shows fullness percentage
+| SDA: 21, SCL: 22
 
-1. **Clone the Repository**  
-   ```bash
-   git clone https://github.com/yourusername/smart-iot-trash-bin.git
-   cd smart-iot-trash-bin
+| GPS Module
+| Provides latitude/longitude
+| RX: 32, TX: 33 (Serial1)
+|===
+
+== ⚙️ How to Use
+
+1. Clone the repository:
++
+[source,bash]
+----
+git clone https://github.com/yourusername/smart-iot-trash-bin.git
+cd smart-iot-trash-bin
+----
+
+2. Flash the code to your ESP32 board using the Arduino IDE.
+
+3. Configure your Arduino IoT Cloud variables:
+   * `trashFullnessPercent`
+   * `isLidOpen`
+   * `gpsLatitude`
+   * `gpsLongitude`
+
+4. Power up the system and monitor it via the IoT Cloud dashboard.
+
+== 📈 Future Improvements
+
+* Add solar charging for full autonomy  
+* Enable route optimization for collection  
+* Add camera module for visual confirmation  
+* Integrate with a municipal dashboard
+
+== 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
