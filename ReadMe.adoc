@@ -91,6 +91,3 @@ cd smart-iot-trash-bin
 * Add camera module for visual confirmation  
 * Integrate with a municipal dashboard
 
-== 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
