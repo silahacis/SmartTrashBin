@@ -9,13 +9,11 @@ The system integrates with the *Arduino IoT Cloud* to provide *real-time monitor
 
 == 🖼️ Project Gallery
 
-[cols="1,1", options="header"]
-|===
-| Figure 1 – Physical Setup | Figure 2 – Design Inspiration (WALL·E)
+=== Figure 1 – Physical Setup
+image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/PhysicalSetup.jpg[Smart Trash Bin Physical Setup, width=400]
 
-| image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/PhysicalSetup.jpg[Smart Trash Bin Physical Setup, width=400]
-| image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/wall-e.jpg[WALL·E Inspired Design, width=250]
-|===
+=== Figure 2 – Design Inspiration (WALL·E)
+image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/wall-e.jpg[WALL·E Inspired Design, width=250]
 
 === Figure 3 – Arduino IoT Cloud Dashboard
 image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoCloudDashboard.png[IoT Cloud Dashboard, width=400]
