@@ -1,37 +1,37 @@
-= 🗑️ Smart IoT Trash Bin with GPS and Cloud Monitoring
+= 🗑️ Smart IoT Trash Bin with GPS & Cloud Monitoring
 :icons: font
 :toc:
 :toclevels: 2
 :sectnums:
 
-A smart trash bin powered by an *ESP32 microcontroller*, equipped with *ultrasonic sensors*, a *servo motor*, *OLED display*, and a *GPS module*.  
-It sends live trash level, location, and lid status to the *Arduino IoT Cloud*, enabling *real-time remote monitoring and control*.
+A compact, intelligent waste management system built on the *ESP32* platform, featuring *ultrasonic sensors*, a *servo motor*, *OLED display*, and *GPS module*.  
+The system integrates with the *Arduino IoT Cloud* to provide *real-time monitoring*, *automated control*, and *location tracking*.
 
-== 📸 Project Overview
+== 🖼️ Project Gallery
 
 === Figure 1 – Physical Setup
 image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/PhysicalSetup.jpg[Smart Trash Bin Physical Setup, width=400]
 
 === Figure 2 – Design Inspiration (WALL·E)
-image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/wall-e.jpg[WALL·E Inspired Look, width=250]
+image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/wall-e.jpg[WALL·E Inspired Design, width=250]
 
 === Figure 3 – Arduino IoT Cloud Dashboard
-image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoCloudDashboard.png[Cloud Dashboard, width=400]
+image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoCloudDashboard.png[IoT Cloud Dashboard, width=400]
 
 === Figure 4 – Mobile Dashboard View
 image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoDashBoardMobile.jpg[Mobile Dashboard, width=250]
 
-== 💡 Features
+== 💡 Key Features
 
-* ✋ *Smart Lid Opening* using ultrasonic hand detection
-* 📊 *Real-time Trash Fullness Monitoring* with sensor averaging
-* 🌍 *Live GPS Tracking* of the bin’s location
-* 📶 *Arduino IoT Cloud Integration* for live data & control
-* 📱 *Manual Lid Control* via cloud dashboard
-* 🔔 *Notification Alerts* when bin is 70% full
-* 📈 *Fullness Average Graph* for trend analysis
+* ✋ *Smart Lid Operation* using ultrasonic proximity detection
+* 📊 *Real-time Trash Level Monitoring* with sensor averaging
+* 🌍 *Live GPS Tracking* of bin location
+* 📶 *Arduino IoT Cloud Integration* for data and control
+* 📱 *Manual Lid Control* via cloud dashboard interface
+* 🔔 *Automated Notifications* when trash exceeds 70% capacity
+* 📈 *Fullness Trend Graph* for data visualization and analysis
 
-== 🔧 Hardware Setup
+== 🔧 Hardware Components
 
 [cols="1,2,1", options="header"]
 |===
@@ -40,33 +40,33 @@ image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/Ard
 | Connection Pins
 
 | ESP32 Dev Board
-| Main microcontroller
+| Primary controller with Wi-Fi capabilities
 | Wi-Fi, Serial, GPIOs
 
 | Ultrasonic Sensor 1
-| Hand detection near lid
+| Detects hand proximity for lid activation
 | TRIG1: 5, ECHO1: 18
 
 | Ultrasonic Sensor 2
-| Trash level measurement
+| Measures trash bin fullness level
 | TRIG2: 2, ECHO2: 4
 
 | Servo Motor
-| Opens/closes lid
+| Controls lid opening and closing
 | PIN: 14
 
 | OLED Display (I2C)
-| Shows fullness percentage
+| Displays live fullness percentage
 | SDA: 21, SCL: 22
 
 | GPS Module
-| Provides latitude/longitude
+| Provides real-time geolocation data
 | RX: 32, TX: 33 (Serial1)
 |===
 
-== ⚙️ How to Use
+== ⚙️ Setup Instructions
 
-1. Clone the repository:
+1. Clone the project repository:
 +
 [source,bash]
 ----
@@ -74,20 +74,30 @@ git clone https://github.com/yourusername/smart-iot-trash-bin.git
 cd smart-iot-trash-bin
 ----
 
-2. Flash the code to your ESP32 board using the Arduino IDE.
+2. Flash the firmware to your ESP32 using the Arduino IDE.
 
-3. Configure your Arduino IoT Cloud variables:
+3. In the Arduino IoT Cloud dashboard, configure the following variables:
    * `trashFullnessPercent`
    * `isLidOpen`
    * `gpsLatitude`
    * `gpsLongitude`
 
-4. Power up the system and monitor it via the IoT Cloud dashboard.
+4. Power the hardware and begin real-time monitoring through the cloud dashboard.
 
-== 📈 Future Improvements
+== 📊 System Performance
 
-* Add solar charging for full autonomy  
-* Enable route optimization for collection  
-* Add camera module for visual confirmation  
-* Integrate with a municipal dashboard
+* Accurate gesture detection for automatic lid control
+* Reliable and responsive trash level monitoring
+* GPS module provides consistent and precise location updates
+* Cloud integration ensures seamless data visualization and remote control
+* Optimized for both desktop and mobile dashboards
+* Notification system activates when bin reaches 70% fullness
+* Graphical analysis enables better waste management decisions
 
+== 📎 License
+
+This project is open-source and available under the MIT License. See the `LICENSE` file for more information.
+
+== 🙌 Acknowledgments
+
+Inspired by the character *WALL·E* and driven by a mission for smarter waste management.
