@@ -2,19 +2,20 @@
 
 A smart trash bin powered by an **ESP32 microcontroller**, equipped with **ultrasonic sensors**, a **servo motor**, **OLED display**, and a **GPS module**. It sends live trash level, location, and lid status to the **Arduino IoT Cloud**, enabling **remote monitoring and control**.
 
-## 📸 Project Overview
+== 📸 Project Overview
 
-### Figure 1 – Physical Setup  
-![Smart Trash Bin Physical Setup](./Images/PhysicalSetup.jpg)
+=== Figure 1 – Physical Setup  
+image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/PhysicalSetup.jpg[Smart Trash Bin Physical Setup, width=400]
 
-### Figure 2 – Design Inspiration (WALL·E)  
-![WALL·E Inspired Look](./Images/wall-e.jpg)
+=== Figure 2 – Design Inspiration (WALL·E)  
+image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/wall-e.jpg[WALL·E Inspired Look, width=250]
 
-### Figure 3 – Arduino IoT Cloud Dashboard  
-![Cloud Dashboard](./Images/ArduinoCloudDashboard.png)
+=== Figure 3 – Arduino IoT Cloud Dashboard  
+image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoCloudDashboard.png[Cloud Dashboard, width=400]
 
-### Figure 4 – Mobile Dashboard View  
-![Mobile Dashboard](./Images/ArduinoDashBoardMobile.jpg)
+=== Figure 4 – Mobile Dashboard View  
+image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoDashBoardMobile.jpg[Mobile Dashboard, width=250]
+
 
 ---
 
