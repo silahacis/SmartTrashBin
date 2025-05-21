@@ -9,27 +9,26 @@ const char SSID[]               = SECRET_SSID;    // Network SSID (name)
 const char PASS[]               = SECRET_OPTIONAL_PASS;    // Network password (use for WPA, or use as key for WEP)
 const char DEVICE_KEY[]  = SECRET_DEVICE_KEY;    // Secret device password
 
+void onLidControlChange();
 
+float averageFullness;
 float latitude;
 float longitude;
-int dailyFullnessAvg;
-int dailyOpenCount;
 int fullness;
-int openCount;
 CloudLocation location;
+bool lidControl;
 bool notify;
 
 void initProperties(){
 
   ArduinoCloud.setBoardId(DEVICE_LOGIN_NAME);
   ArduinoCloud.setSecretDeviceKey(DEVICE_KEY);
+  ArduinoCloud.addProperty(averageFullness, READ, ON_CHANGE, NULL);
   ArduinoCloud.addProperty(latitude, READ, ON_CHANGE, NULL);
   ArduinoCloud.addProperty(longitude, READ, ON_CHANGE, NULL);
-  ArduinoCloud.addProperty(dailyFullnessAvg, READ, ON_CHANGE, NULL);
-  ArduinoCloud.addProperty(dailyOpenCount, READ, ON_CHANGE, NULL);
   ArduinoCloud.addProperty(fullness, READ, ON_CHANGE, NULL);
-  ArduinoCloud.addProperty(openCount, READ, ON_CHANGE, NULL);
   ArduinoCloud.addProperty(location, READ, ON_CHANGE, NULL);
+  ArduinoCloud.addProperty(lidControl, READWRITE, ON_CHANGE, onLidControlChange);
   ArduinoCloud.addProperty(notify, READ, ON_CHANGE, NULL);
 
 }
