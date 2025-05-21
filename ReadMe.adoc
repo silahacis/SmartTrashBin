@@ -5,21 +5,16 @@ A smart trash bin powered by an **ESP32 microcontroller**, equipped with **ultra
 ## 📸 Project Overview
 
 ### Figure 1 – Physical Setup  
-<img src="https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/PhysicalSetup.jpg" width="400" alt="Smart Trash Bin Physical Setup" />
+![Smart Trash Bin Physical Setup](./Images/PhysicalSetup.jpg)
 
 ### Figure 2 – Design Inspiration (WALL·E)  
-<img src="https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/wall-e.jpg" width="250" alt="WALL·E Inspired Look" />
+![WALL·E Inspired Look](./Images/wall-e.jpg)
 
 ### Figure 3 – Arduino IoT Cloud Dashboard  
-<img src="https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoCloudDashboard.png" width="400" alt="Cloud Dashboard" />
+![Cloud Dashboard](./Images/ArduinoCloudDashboard.png)
 
 ### Figure 4 – Mobile Dashboard View  
-<img src="https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoDashBoardMobile.jpg" width="250" alt="Mobile Dashboard" />
-
-### Figure 5 – UML Diagram  
-<img src="https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/UmlDiagram.png" width="400" alt="UML Diagram" />
-
-
+![Mobile Dashboard](./Images/ArduinoDashBoardMobile.jpg)
 
 ---
 
