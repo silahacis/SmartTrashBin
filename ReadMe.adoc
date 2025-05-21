@@ -1,58 +1,87 @@
 :Author: silahacis
 :Email:
-:Date: 10/05/2025
-:Revision: version#
-:License: Public Domain
+:Date: 2025-05-10
+:Revision: 1.0.0
+:License: MIT
 
-= Project: {Project}
+= Smart Trash Bin Project
 
-Describe your project
+This project implements a smart trash bin using an ESP32 microcontroller, ultrasonic sensors, a servo motor, a GPS module, and an OLED display. The bin automatically opens its lid when it detects a hand, measures its fullness level, and sends GPS-based notifications when it's nearly full. It's also integrated with the Arduino IoT Cloud platform.
 
 == Step 1: Installation
-Please describe the steps to install this project.
 
-For example:
+Follow these steps to install and configure the project:
 
-1. Open this file
-2. Edit as you like
-3. Release to the World!
+1. Clone or download the project folder from GitHub.
+2. Open the `.ino` file using the Arduino IDE or the Arduino Web Editor.
+3. Make sure you have installed the required libraries:
+   * Arduino IoT Cloud
+   * ESP32 board definitions
+   * Adafruit SSD1306
+   * Adafruit GFX
+   * TinyGPSPlus
+   * ESP32Servo
+4. Replace the placeholder values in `arduino_secrets.h` with your Wi-Fi credentials and Arduino Cloud credentials.
 
-== Step 2: Assemble the circuit
+== Step 2: Assemble the Circuit
 
-Assemble the circuit following the diagram layout.png attached to the sketch
+Assemble the components following the `layout.png` diagram included in the sketch folder. The project uses the following key connections:
 
-== Step 3: Load the code
+- Ultrasonic Sensor 1 (for hand detection): TRIG - D5, ECHO - D18
+- Ultrasonic Sensor 2 (for trash level): TRIG - D2, ECHO - D4
+- Servo Motor: D14
+- OLED Display (I2C): SDA - D21, SCL - D22
+- GPS Module: RX - D32, TX - D33
 
-Upload the code contained in this sketch on to your board
+Refer to the schematic or `layout.png` for full wiring details.
 
-=== Folder structure
+== Step 3: Upload the Code
+
+Upload the code to your ESP32 using the Arduino IDE. Ensure the correct board and port are selected.
+
+=== Folder Structure
 
 ....
- sketch123                => Arduino sketch folder
-  âââ sketch123.ino       => main Arduino file
-  âââ schematics.png      => (optional) an image of the required schematics
-  âââ layout.png          => (optional) an image of the layout
-  âââ ReadMe.adoc         => this file
+smart-trash-bin           => Project folder
+ ├── smart-trash-bin.ino  => Main Arduino code
+ ├── thingProperties.h    => Arduino Cloud property definitions
+ ├── arduino_secrets.h    => Wi-Fi and Cloud credentials (DO NOT SHARE)
+ ├── layout.png           => Circuit layout diagram (optional)
+ ├── schematics.png       => Circuit schematic (optional)
+ └── ReadMe.adoc          => Project documentation
 ....
 
 === License
-This project is released under a {License} License.
+
+This project is licensed under the MIT License. You are free to use, modify, and distribute this project with attribution.
 
 === Contributing
-To contribute to this project please contact: 
 
-=== BOM
-Add the bill of the materials you need for this project.
+Contributions are welcome! To contribute:
+
+- Fork the repository
+- Make your changes
+- Open a pull request
+
+For direct contributions, please contact the author.
+
+=== Bill of Materials (BOM)
 
 |===
-| ID | Part name      | Part number | Quantity
-| R1 | 10k Resistor   | 1234-abcd   | 10       
-| L1 | Red LED        | 2345-asdf   | 5        
-| A1 | Arduino Zero   | ABX00066    | 1        
+| ID | Part Name        | Part Number | Quantity
+| R1 | 10k Resistor     | 1234-ABCD   | 10       
+| L1 | Red LED          | 2345-ASDF   | 5        
+| A1 | ESP32 Dev Board  | ESP32-DEV   | 1        
+| S1 | Ultrasonic Sensor| HC-SR04     | 2        
+| D1 | OLED Display     | SSD1306     | 1        
+| M1 | Servo Motor      | SG90        | 1        
+| G1 | GPS Module       | NEO-6M      | 1        
 |===
-
 
 === Help
-This document is written in the _AsciiDoc_ format, a markup language to describe documents. 
-If you need help you can search the http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
-or consult the http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]
+
+This document is written in _AsciiDoc_, a lightweight markup language used for writing structured documentation.
+
+Resources:
+- http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
+- http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]
