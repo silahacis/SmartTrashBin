@@ -1,87 +1,51 @@
-:Author: silahacis
-:Email:
-:Date: 2025-05-10
-:Revision: 1.0.0
-:License: MIT
+# 🗑️ Smart IoT Trash Bin with GPS and Cloud Monitoring
 
-= Smart Trash Bin Project
+A smart trash bin powered by an **ESP32 microcontroller**, equipped with **ultrasonic sensors**, a **servo motor**, **OLED display**, and a **GPS module**. It sends live trash level, location, and lid status to the **Arduino IoT Cloud**, enabling **remote monitoring and control**.
 
-This project implements a smart trash bin using an ESP32 microcontroller, ultrasonic sensors, a servo motor, a GPS module, and an OLED display. The bin automatically opens its lid when it detects a hand, measures its fullness level, and sends GPS-based notifications when it's nearly full. It's also integrated with the Arduino IoT Cloud platform.
+## 📸 Project Overview
 
-== Step 1: Installation
+### Figure 1 – Physical Setup  
+<img src="Images/PhysicalSetup.jpg" width="400" alt="Smart Trash Bin Physical Setup">
 
-Follow these steps to install and configure the project:
+### Figure 2 – Design Inspiration (WALL·E)  
+<img src="Images/wall-e.jpg" width="250" alt="WALL·E Inspired Look">
 
-1. Clone or download the project folder from GitHub.
-2. Open the `.ino` file using the Arduino IDE or the Arduino Web Editor.
-3. Make sure you have installed the required libraries:
-   * Arduino IoT Cloud
-   * ESP32 board definitions
-   * Adafruit SSD1306
-   * Adafruit GFX
-   * TinyGPSPlus
-   * ESP32Servo
-4. Replace the placeholder values in `arduino_secrets.h` with your Wi-Fi credentials and Arduino Cloud credentials.
+### Figure 3 – Arduino IoT Cloud Dashboard  
+<img src="Images/ArduinoCloudDashboard.jpg" width="400" alt="Cloud Dashboard">
 
-== Step 2: Assemble the Circuit
+### Figure 4 – Mobile Dashboard View  
+<img src="Images/ArduinoDashBoardMobile.jpg" width="250" alt="Mobile Dashboard">
 
-Assemble the components following the `layout.png` diagram included in the sketch folder. The project uses the following key connections:
+---
 
-- Ultrasonic Sensor 1 (for hand detection): TRIG - D5, ECHO - D18
-- Ultrasonic Sensor 2 (for trash level): TRIG - D2, ECHO - D4
-- Servo Motor: D14
-- OLED Display (I2C): SDA - D21, SCL - D22
-- GPS Module: RX - D32, TX - D33
+## 💡 Features
 
-Refer to the schematic or `layout.png` for full wiring details.
+- ✋ **Smart Lid Opening** using ultrasonic hand detection  
+- 📊 **Real-time Trash Fullness Monitoring** with sensor averaging  
+- 🌍 **Live GPS Tracking** of the bin’s location  
+- 📶 **Arduino IoT Cloud Integration** for real-time data and control  
+- 📱 **Manual Lid Control** via cloud dashboard  
+- 🔔 **Notification System** when bin is 70% full  
+- 📈 **Fullness Average Graph** for trend analysis
 
-== Step 3: Upload the Code
+---
 
-Upload the code to your ESP32 using the Arduino IDE. Ensure the correct board and port are selected.
+## 🔧 Hardware Setup
 
-=== Folder Structure
+| Component            | Description                         | Connection Pins         |
+|----------------------|-------------------------------------|--------------------------|
+| ESP32 Dev Board      | Main microcontroller                | Wi-Fi, Serial, GPIOs     |
+| Ultrasonic Sensor 1  | Hand detection near lid             | TRIG1: 5, ECHO1: 18      |
+| Ultrasonic Sensor 2  | Trash level measurement             | TRIG2: 2, ECHO2: 4       |
+| Servo Motor          | Opens/closes lid                    | PIN: 14                  |
+| OLED Display (I2C)   | Shows fullness %                    | SDA: 21, SCL: 22         |
+| GPS Module           | Provides latitude/longitude         | RX: 32, TX: 33 (Serial1) |
 
-....
-smart-trash-bin           => Project folder
- ├── smart-trash-bin.ino  => Main Arduino code
- ├── thingProperties.h    => Arduino Cloud property definitions
- ├── arduino_secrets.h    => Wi-Fi and Cloud credentials (DO NOT SHARE)
- ├── layout.png           => Circuit layout diagram (optional)
- ├── schematics.png       => Circuit schematic (optional)
- └── ReadMe.adoc          => Project documentation
-....
+---
 
-=== License
+## ⚙️ How to Use
 
-This project is licensed under the MIT License. You are free to use, modify, and distribute this project with attribution.
-
-=== Contributing
-
-Contributions are welcome! To contribute:
-
-- Fork the repository
-- Make your changes
-- Open a pull request
-
-For direct contributions, please contact the author.
-
-=== Bill of Materials (BOM)
-
-|===
-| ID | Part Name        | Part Number | Quantity
-| R1 | 10k Resistor     | 1234-ABCD   | 10       
-| L1 | Red LED          | 2345-ASDF   | 5        
-| A1 | ESP32 Dev Board  | ESP32-DEV   | 1        
-| S1 | Ultrasonic Sensor| HC-SR04     | 2        
-| D1 | OLED Display     | SSD1306     | 1        
-| M1 | Servo Motor      | SG90        | 1        
-| G1 | GPS Module       | NEO-6M      | 1        
-|===
-
-=== Help
-
-This document is written in _AsciiDoc_, a lightweight markup language used for writing structured documentation.
-
-Resources:
-- http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
-- http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]
+1. **Clone the Repository**  
+   ```bash
+   git clone https://github.com/yourusername/smart-iot-trash-bin.git
+   cd smart-iot-trash-bin
