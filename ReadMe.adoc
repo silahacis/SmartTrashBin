@@ -4,7 +4,7 @@
 :toclevels: 2
 :sectnums:
 
-A compact, intelligent waste management system built on the *ESP32* platform, featuring *ultrasonic sensors*, a *servo motor*, *OLED display*, and *GPS module*.  
+A compact, intelligent waste management system built on the *ESP32* platform, featuring *ultrasonic sensors*, a *servo motor*, *OLED display*, *GPS module*, and *power supply module*.  
 The system integrates with the *Arduino IoT Cloud* to provide *real-time monitoring*, *automated control*, and *location tracking*.
 
 == 🖼️ Project Gallery
@@ -20,6 +20,11 @@ image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/Ard
 
 === Figure 4 – Mobile Dashboard View
 image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoDashBoardMobile.jpg[Mobile Dashboard, width=250]
+
+== 🔌 Circuit Diagram
+
+=== Figure 5 – Fritzing Wiring Schematic
+image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/CircuitDiagram.png[Fritzing Circuit Diagram, width=500]
 
 == 💡 Key Features
 
@@ -62,6 +67,10 @@ image::https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/Ard
 | GPS Module
 | Provides real-time geolocation data
 | RX: 32, TX: 33 (Serial1)
+
+| Power Supply Module
+| Powers ESP32 and peripherals (e.g., via 18650 battery or USB)
+| VIN: 5V input, GND: Ground
 |===
 
 == ⚙️ Setup Instructions
@@ -82,7 +91,9 @@ cd smart-iot-trash-bin
    * `gpsLatitude`
    * `gpsLongitude`
 
-4. Power the hardware and begin real-time monitoring through the cloud dashboard.
+4. Power the system using a USB cable, battery pack, or regulated 5V supply.
+
+5. Start monitoring and controlling the device via the cloud dashboard.
 
 == 📊 System Performance
 
@@ -93,10 +104,6 @@ cd smart-iot-trash-bin
 * Optimized for both desktop and mobile dashboards
 * Notification system activates when bin reaches 70% fullness
 * Graphical analysis enables better waste management decisions
-
-== 📎 License
-
-This project is open-source and available under the MIT License. See the `LICENSE` file for more information.
 
 == 🙌 Acknowledgments
 
