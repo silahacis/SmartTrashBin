@@ -17,6 +17,7 @@ A smart trash bin powered by an **ESP32 microcontroller**, equipped with **ultra
 ![Mobile Dashboard](https://raw.githubusercontent.com/silahacis/SmartTrashBin/main/Images/ArduinoDashBoardMobile.jpg)
 
 
+
 ---
 
 ## 💡 Features
